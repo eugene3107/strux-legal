@@ -58,50 +58,56 @@
   <body>
     <main>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated 6 October 2026</p>
+      <p class="updated">Last updated 7 October 2026</p>
 
-      <p class="lede">Data from Apple Health never leaves your phone. Data from Strava and WHOOP is kept on our server so the app can receive updates even while it is closed. We do not sell your data, we do not use it for advertising, and we do not track you across other apps or websites.</p>
+      <p class="lede">Your fitness and health data comes straight from those services to your phone. Our server never stores it. We do not sell your data, we do not use it for advertising, we do not send it to any AI service, and we do not track you across other apps or websites.</p>
 
-      <p>Strux is a training and recovery app. It reads your fitness data from services you already use, such as Strava, WHOOP and Apple Health, and shows you training load, recovery and Hyrox-specific guidance.</p>
+      <p>Strux is a training and recovery app. It reads your fitness data from services you already use — Strava, WHOOP, Oura and Apple Health — and shows you training load, recovery and race-specific guidance.</p>
 
       <h2>Data we access</h2>
 
       <p>Only when you explicitly connect a service, and only the categories that service grants:</p>
 
-      <p><strong>Apple Health</strong> — workouts, heart-rate variability, resting heart rate and sleep. Read on your phone only; never sent to our server or anyone else.</p>
+      <p><strong>Apple Health</strong> — workouts, heart-rate variability, resting heart rate and sleep. Read on your phone only.</p>
 
       <p><strong>Strava</strong> — activity history (type, start time, duration, distance, average speed, relative effort, calories) and the name on your Strava profile.</p>
 
       <p><strong>WHOOP</strong> — daily recovery scores, heart-rate variability, resting heart rate, blood oxygen, skin temperature, sleep records including stage breakdown, workouts, and the name on your WHOOP profile.</p>
 
-      <p><strong>Oura</strong> — sleep and readiness data, if you connect it.</p>
+      <p><strong>Oura</strong> — sleep and readiness data.</p>
 
-      <p>We request read-only access. Strux cannot post, edit or delete anything in your Strava, WHOOP or Oura account, and it does not write to Apple Health.</p>
+      <p>Before you connect Strava, WHOOP or Oura, Strux tells you what it will read, how, and how to withdraw and delete. We request read-only access: Strux cannot post, edit or delete anything in your accounts, and it does not write to Apple Health.</p>
 
       <h2>Your account</h2>
 
-      <p>The first time Strux starts, it creates an anonymous account for your device on our server. It has no name, email address or password — it is a random identifier that lets our server hold your connected data for you. You do not sign in to create it.</p>
+      <p>The first time Strux starts, it creates an anonymous account for your device on our server. It has no name, email address or password — only a random identifier. You do not sign in to create it.</p>
 
-      <h2>Data we store on our server</h2>
+      <h2>What our server does</h2>
 
-      <p>Our server runs on Cloudflare. For your anonymous account it stores:</p>
+      <p>Two things only:</p>
 
       <ul>
-        <li><strong>Access tokens</strong> for the services you connect, encrypted, so the server can   fetch new data on your behalf.</li>
-        <li>Your provider account name and id**, so incoming updates from Strava or   WHOOP can be matched to your account.</li>
-        <li>Activities<strong> from Strava, and </strong>recovery and sleep** records from WHOOP.</li>
-        <li>How many explanations you request each day**, to apply a daily limit.</li>
+        <li>It holds your <strong>anonymous account</strong>.</li>
+        <li>It <strong>relays sign-in</strong> to Strava, WHOOP and Oura. Issuing and renewing your access to those services needs a secret that cannot safely live in an app, so that step passes through our server. The server hands the result straight back to your phone and keeps nothing.</li>
       </ul>
 
-      <p>It also keeps a technical log of deliveries from Strava and WHOOP (when they arrived and whether they were accepted). These entries contain no health values and are used only to find faults.</p>
+      <p>It does not receive, store or process your fitness or health data.</p>
 
-      <h2>Data we store on your phone</h2>
+      <h2>Data kept on your phone</h2>
 
-      <p>Supplements and routines you record, your settings, and a cache of your synced data are kept in the app's private storage so it works offline. Access tokens on your phone are held in the iOS keychain.</p>
+      <ul>
+        <li><strong>Strava</strong> data for at most seven days after it was fetched, after which it is deleted — even if you have not opened the app.</li>
+        <li><strong>WHOOP</strong> data only while the app is running. It is never saved to storage.</li>
+        <li><strong>Apple Health</strong> and <strong>Oura</strong> data, cached so the app opens with your data.</li>
+        <li><strong>Supplements, routines and sessions</strong> you record yourself.</li>
+        <li><strong>Access tokens</strong> for connected services, in the iOS keychain.</li>
+      </ul>
 
-      <h2>Explanations written by AI</h2>
+      <p>Strux fetches your recent history fresh from each service when you open it.</p>
 
-      <p>Some cards offer <strong>“Why is this?”</strong>. Before the first one, Strux asks your permission. If you agree, each time you tap it our server sends a short summary of your recent recovery, sleep and training figures to <strong>Anthropic</strong>, the company that makes the Claude AI model, which writes the explanation. Nothing else is sent: not your name, not your provider accounts, not your Apple Health data. Under Anthropic's commercial terms, this data is not used to train their models. If you never tap “Why is this?”, nothing is sent to Anthropic.</p>
+      <h2>Explanations</h2>
+
+      <p>Some cards offer <strong>“Why is this?”</strong>. The explanation is worked out on your phone from your own recorded data using fixed rules. Nothing is sent anywhere to produce it.</p>
 
       <h2>Crash reports</h2>
 
@@ -109,27 +115,33 @@
 
       <h2>Who else receives your data</h2>
 
-      <p>Only the companies above, and only to provide the features described: Cloudflare (hosting our server), Anthropic (explanations, only after you agree) and Sentry (crash reports). Strava, WHOOP and Oura receive requests from us for your data, under your authorisation. We do not sell or rent your data to anyone, and we do not share it with advertisers or data brokers.</p>
+      <ul>
+        <li><strong>Cloudflare</strong> hosts our server, and so handles the sign-in relay and your anonymous account.</li>
+        <li><strong>Sentry</strong> receives crash reports.</li>
+        <li><strong>Strava, WHOOP and Oura</strong> receive requests from Strux for your data, under your authorisation. Strava may monitor and collect data about how Strux uses the Strava API, and may use it for any business purpose, as set out in Strava's API Agreement.</li>
+      </ul>
+
+      <p>We do not sell or rent your data to anyone, and we do not share it with advertisers, data brokers or AI services.</p>
 
       <h2>Deleting your data</h2>
 
-      <p><strong>Disconnect a service</strong> in the Connect screen: its access tokens are removed from your phone and from our server, together with everything our server received from that service.</p>
+      <p><strong>Disconnect a service</strong> in the Connect screen: everything Strux holds from that service is deleted from your phone, and Strux confirms when it is done. Our server never held it.</p>
 
-      <p><strong>Delete your account</strong> in the Connect screen: our server deletes your account and everything stored with it — tokens, activities, recovery, sleep and usage counts. This cannot be undone.</p>
+      <p><strong>Delete your account</strong> in the Connect screen: our server deletes your anonymous account. This cannot be undone.</p>
 
       <p><strong>Delete the app</strong>: removes everything stored on your phone. (Your anonymous account on our server stays until you delete it in the app, or ask us to.)</p>
 
       <p>To revoke Strux's access at the source, independently of the app:</p>
 
       <ul>
-        <li>Strava — <a href="https://www.strava.com/settings/apps">https://www.strava.com/settings/apps</a></li>
-        <li>OOP — the Connected Apps section of your WHOOP account</li>
-        <li>ra — the Connected apps section of your Oura account</li>
+        <li>Strava — <a href=“https://www.strava.com/settings/apps”>https://www.strava.com/settings/apps</a></li>
+        <li>WHOOP — the Connected Apps section of your WHOOP account</li>
+        <li>Oura — the connected apps section of your Oura account</li>
       </ul>
 
       <h2>How long we keep it</h2>
 
-      <p>Until you disconnect the service it came from, or delete your account. Crash reports are kept by Sentry for up to 90 days.</p>
+      <p>On your phone: Strava data seven days, WHOOP data only while the app runs, everything else until you disconnect or delete the app. On our server: your anonymous account until you delete it. Crash reports are kept by Sentry for up to 90 days.</p>
 
       <h2>Children</h2>
 
@@ -137,7 +149,7 @@
 
       <h2>Your rights</h2>
 
-      <p>You can ask us to access, correct, export or delete the data we hold about you. Deleting your account in the app does the last of these immediately. If you are in a jurisdiction granting rights over personal data — including the UK and EU under GDPR, and California under CCPA — those rights apply, and we will help you exercise them.</p>
+      <p>You can ask us to access, correct, export or delete the data we hold about you — which, on our server, is only your anonymous account. If you are in a jurisdiction granting rights over personal data — including the UK and EU under GDPR, and California under CCPA — those rights apply, and we will help you exercise them.</p>
 
       <h2>Changes</h2>
 
